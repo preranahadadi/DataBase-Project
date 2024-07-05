@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Seller Page</title>
+	<link rel="stylesheet" href="sellerpage.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+      Seller Page
+    </div>
+    <form method="post" action="/seller">
+          <label>Product Rate</label>
+          <input type="text" class="input" name = "ProductRate" placeholder = "Product Rate"><br/>
+
+          <label>Selling Rate</label>
+          <input type="text" class="input" name = "SellingRate" placeholder="SellingRate"><br/>
+
+          <label>Batch number</label>
+          <input type="number" class="input" name="BatchNumber" placeholder="BatchNumber"></br>
+
+          <label>quantity</label>
+          <input type="number" class="input" min='1' name = "Quantity" placeholder="Quantity"><br/>
+            
+          <label>Product Name</label>
+          <input type="text" class="input" name = "ProductName" placeholder="ProductName"></br>
+
+          <label>Product Id</label>
+          <input type="text" class="input" name = "ProductId" placeholder="ProductId"></br>
+              <table>
+                  {% for item in df %}
+                  <tr>
+                  <td>{{item[0]}}</td>
+                  <td>{{item[1]}}</td>
+                  <td>{{item[2]}}</td>
+                  <td>{{item[3]}}</td>
+                  <td>{{item[4]}}</td>
+                  <td>{{item[5]}}</td>
+                  </tr>
+                  {% endfor %}                
+              </table>
+ 
+        <input type="submit" value="Show" class="btn" name = "action" >
+        <input type="submit" value="Add" class="btn" name="action">
+        <input type="submit" value="Delete" class="btn" name="action">
+        <input type="submit" value="Update" class="btn" name="action">
+    </form> 
+</div>	
+	
+</body>
+</html>
